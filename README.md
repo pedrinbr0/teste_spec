@@ -1,0 +1,1 @@
+Neste projeto, aprendi usar o RSpec.Agora estou usando para validar alguns algoritmos que fiz há alguns meses, então vai servir para práticar o uso do RSpec e para ver se eu realmente aprendi a resolver esses algoritmos ou preciso estudá-los melhor.
