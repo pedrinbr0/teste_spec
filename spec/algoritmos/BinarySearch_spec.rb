@@ -1,32 +1,16 @@
-# l= índice esquerdo, r= índice direito
+require 'spec_helper'
+require_relative '../../lib/BinarySearch'
 
-def binary_search(arr, x)
-  l = 0
-  r = arr.length - 1
+RSpec.describe 'Algoritmo BinarySearch' do
+  describe '#binary_search' do
+    it 'encontra o elemento requisitado no array' do
+      arr = [2, 3, 5, 10, 40]
+      x = 10
+      resultado_esperado = 3
 
-  while l <= r
-    mid = l + (r - l) / 2
+      resultado = binary_search(arr, x)
 
-    if arr[mid] == x
-      return mid
-    end
-
-    if arr[mid] < x
-      l = mid + 1
-    else
-      r = mid - 1
+      expect(resultado).to eq(resultado_esperado)
     end
   end
-
-  return -1
-end
-
-arr = [2, 3, 5, 10, 40]
-x = 10
-
-result = binary_search(arr, x)
-if result != -1
-  puts "Element is present at index #{result}"
-else
-  puts "Element is not present in array"
 end

@@ -15,8 +15,7 @@ def find_age(data_atual, mês_atual, ano_atual, data_de_nascimento, mês_nascime
   mês_calculado = mês_atual - mês_nascimento
   ano_calculado = ano_atual - ano_nascimento
 
-  puts "Idade Atual:"
-  puts "Anos: #{ano_calculado}, Meses: #{mês_calculado}, Dias: #{data_calculado}"
+  { anos: ano_calculado, meses: mês_calculado, dias: data_calculado }
 end
 
 data_atual = 7
