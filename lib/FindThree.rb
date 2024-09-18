@@ -1,4 +1,4 @@
-def print_3_largest(arr)
+def find_three_largest(arr)
   arr_size = arr.length
 
   if arr_size < 3
@@ -21,8 +21,8 @@ def print_3_largest(arr)
     end
   end
 
-  puts "#{first}, #{second}, #{third}"
+  [first.to_s, second.to_s, third.to_s]
 end
 
 arr = [12, 13, 1, 10, 34, 11, 34]
-print_3_largest(arr)
+find_three_largest(arr)

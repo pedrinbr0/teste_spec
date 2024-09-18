@@ -12,7 +12,6 @@ def maximum_sum(arr, k)
       end
     end
 
-    # Break if minimum element is 0
     break if min == 0
 
     arr[index] = -arr[index]
