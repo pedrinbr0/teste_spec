@@ -1,6 +1,5 @@
 # length = comprimento
 def min_sum(arr)
-  # find the minimum element of arr
   min_val = arr.min
 
   return min_val * (arr.length - 1)
