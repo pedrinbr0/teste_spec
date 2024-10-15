@@ -84,3 +84,16 @@ end
 gem 'devise'
 
 gem 'bcrypt', '~> 3.1.7'
+
+group :development do
+  gem 'ruby-lsp'
+end
+
+group :development do
+  gem 'ruby-debug-ide'
+  gem 'debase'
+end
+
+group :development do
+  gem 'readapt'
+end
