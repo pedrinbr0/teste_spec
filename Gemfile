@@ -90,10 +90,5 @@ group :development do
 end
 
 group :development do
-  gem 'ruby-debug-ide'
-  gem 'debase'
-end
-
-group :development do
   gem 'readapt'
 end
