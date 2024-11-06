@@ -1,4 +1,40 @@
 def FibonacciSearch( arr, x, n)
+  fib_m_m2 = 0
+  fib_m_m1 = 1
+  fib_m = fib_m_m2 + fib_m_m1
+
+  while fib_m < n
+    fib_m_m2 = fib_m_m1
+    fib_m_m1 = fib_m
+    fib_m = fib_m_m2 + fib_m_m1
+  end
+
+  offset = -1
+
+  while fib_m > n
+    i = [offset + fib_m_m2, n - 1].min
+
+    if arr[i] < x
+      fib_m = fib_m_m1
+      fib_m_m1 = fib_m_m2
+      fib_m_m2 = fib_m - fib_m_m1
+      offset = i
+
+    elsif arr[i] > x
+      fib_m = fib_m_m2
+      fib_m_m1 = fib_m_m1 - fib_m_m2
+      fib_m_m2 = fib_m - fib_m_m1
+
+    else
+      return i
+    end
+  end
+
+  if fib_m_m1 > 0 && arr[n - 1] == x
+    return n - 1
+  end
+
+  return -1
 
 end
 
