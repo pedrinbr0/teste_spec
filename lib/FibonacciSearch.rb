@@ -1,36 +1,36 @@
 def FibonacciSearch( arr, x, n)
-  fib_m_m2 = 0
-  fib_m_m1 = 1
-  fib_m = fib_m_m2 + fib_m_m1
+  fib_two_before = 0
+  fib_one_before = 1
+  fib_current = fib_two_before + fib_one_before
 
-  while fib_m < n
-    fib_m_m2 = fib_m_m1
-    fib_m_m1 = fib_m
-    fib_m = fib_m_m2 + fib_m_m1
+  while fib_current < n
+    fib_two_before = fib_one_before
+    fib_one_before = fib_current
+    fib_current = fib_two_before + fib_one_before
   end
 
   offset = -1
 
-  while fib_m > n
-    i = [offset + fib_m_m2, n - 1].min
+  while fib_current > n
+    i = [offset + fib_two_before, n - 1].min
 
     if arr[i] < x
-      fib_m = fib_m_m1
-      fib_m_m1 = fib_m_m2
-      fib_m_m2 = fib_m - fib_m_m1
+      fib_current = fib_one_before
+      fib_one_before = fib_two_before
+      fib_two_before = fib_current - fib_one_before
       offset = i
 
     elsif arr[i] > x
-      fib_m = fib_m_m2
-      fib_m_m1 = fib_m_m1 - fib_m_m2
-      fib_m_m2 = fib_m - fib_m_m1
+      fib_current = fib_two_before
+      fib_one_before = fib_one_before - fib_two_before
+      fib_two_before = fib_current - fib_one_before
 
     else
       return i
     end
   end
 
-  if fib_m_m1 > 0 && arr[n - 1] == x
+  if fib_one_before > 0 && arr[n - 1] == x
     return n - 1
   end
 
