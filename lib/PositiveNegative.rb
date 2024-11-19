@@ -1,4 +1,4 @@
-def rearrange(arr, size)
+def positive_negative(arr, size)
   positive = 0
   negative = 1
 
@@ -27,6 +27,6 @@ end
 arr = [1, -3, 5, 6, -3, 6, 7, -4, 9, 10]
 n = arr.length
 
-rearrange(arr, n)
+positive_negative(arr, n)
 
 puts arr.join(" ")
