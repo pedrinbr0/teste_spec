@@ -15,7 +15,7 @@ end
 
 if __FILE__ == $0
   t = "21:39"
-  k = 43
+  k = 44
 
   sum_minutes(t, k)
 end
