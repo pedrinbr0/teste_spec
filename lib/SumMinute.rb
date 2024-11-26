@@ -1,10 +1,10 @@
-def sum_minutes(T, K)
-  minutes = (((T[0].ord - '0'.ord) * 10 +
-    (T[1].ord - '0'.ord)) * 60 +
-    ((T[3].ord - '0'.ord) * 10 +
-      (T[4].ord - '0'.ord)))
+def sum_minutes(t, k)
+  minutes = (((t[0].ord - '0'.ord) * 10 +
+    (t[1].ord - '0'.ord)) * 60 +
+    ((t[3].ord - '0'.ord) * 10 +
+      (t[4].ord - '0'.ord)))
 
-  minutes += K
+  minutes += k
 
   hour = (minutes / 60) % 24
   min = minutes % 60
@@ -14,9 +14,9 @@ def sum_minutes(T, K)
 end
 
 if __FILE__ == $0
-  T = "21:39"
-  K = 43
+  t = "21:39"
+  k = 43
 
-  sum_minutes(T, K)
+  sum_minutes(t, k)
 end
 
