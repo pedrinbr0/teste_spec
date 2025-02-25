@@ -3,7 +3,6 @@ def common_characters(strings, n)
   freq = Array.new(MAX_CHAR, 0)
 
   strings.each do |string|
-
     temp = Array.new(MAX_CHAR, 0)
     string.each_char do |char|
       if char =~ /[a-zA-Z]/
@@ -21,7 +20,7 @@ def common_characters(strings, n)
     result << (i + 'a'.ord).chr if freq[i] == n
   end
 
-  result.join
+  result.sort.join  # Ordena os caracteres antes de retornar
 end
 
 strings = ["geeksforgeeks", "gemkstones", "acknowledges", "aguelikes"]
