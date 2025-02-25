@@ -1,4 +1,4 @@
-def FibonacciSearch( arr, x, n)
+def FibonacciSearch(arr, x, n)
   fib_two_before = 0
   fib_one_before = 1
   fib_current = fib_two_before + fib_one_before
@@ -11,7 +11,7 @@ def FibonacciSearch( arr, x, n)
 
   offset = -1
 
-  while fib_current > n
+  while fib_current > 1
     i = [offset + fib_two_before, n - 1].min
 
     if arr[i] < x
@@ -19,23 +19,20 @@ def FibonacciSearch( arr, x, n)
       fib_one_before = fib_two_before
       fib_two_before = fib_current - fib_one_before
       offset = i
-
     elsif arr[i] > x
       fib_current = fib_two_before
       fib_one_before = fib_one_before - fib_two_before
       fib_two_before = fib_current - fib_one_before
-
     else
       return i
     end
   end
 
-  if fib_one_before > 0 && arr[n - 1] == x
-    return n - 1
+  if fib_one_before == 1 && arr[offset + 1] == x
+    return offset + 1
   end
 
   return -1
-
 end
 
 arr = [10, 22, 35, 40, 45, 50, 80, 82, 85, 90, 100, 235]
