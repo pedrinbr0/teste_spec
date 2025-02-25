@@ -5,10 +5,7 @@ def group_words(input)
     word_dict = word.chars.tally
 
     key = word_dict.keys
-
-    key = key.sort
-
-    key = key.join
+    key = key.sort.join
 
     if dict.key?(key)
       dict[key] << word
@@ -17,7 +14,7 @@ def group_words(input)
     end
   end
 
-  dict.each do |_key, value|
+  dict.values.each do |value|  # Usando .values para pegar os grupos
     puts value.join(',')
   end
 end
