@@ -1,8 +1,7 @@
 def quick_sort(arr)
   return arr if arr.length <= 1
 
-  pivot = arr.sample
-
+  pivot = arr[arr.length / 2]  # Escolha do pivô no meio do array
   l = arr.select { |x| x < pivot }
   r = arr.select { |x| x > pivot }
   middle = arr.select { |x| x == pivot }
